@@ -7,6 +7,7 @@
 
 Summary:	ClamAV Anti-Virus protection for the KDE desktop
 Summary(ru_RU.KOI8-R): KDE-ÏÂÏÌÏÞËÁ ÄÌÑ ÁÎÔÉ×ÉÒÕÓÎÏÇÏ ÓËÁÎÅÒÁ Clam AntiVirus
+Summary(pl):	Antywirus ClamAV dla ¶rodowiska KDE
 Name:		klamav
 Version:	0.09
 Release:	1.11
@@ -17,9 +18,9 @@ Source0:	http://dl.sourceforge.net/klamav/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-paths.patch
 URL:		http://klamav.sourceforge.net/
 BuildRequires:	automake
+BuildRequires:	clamav-devel
 BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	rpmbuild(macros) >= 1.129
-BuildRequires:	clamav-devel
 BuildRequires:	sed >= 4.0
 Requires:	clamav
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -31,9 +32,14 @@ ClamAV Anti-Virus protection for the KDE desktop. Includes:
 - Quarantine Management
 - Downloading Updates
 - Mail Scanning (KMail/Evolution)
-- Automated Installation
-- ClamAV pre-packaged
-- Dazuko pre-packaged
+
+%description -l pl
+Antywirus ClamAV dla ¶rodowiska KDE. Zawiera:
+- skanowanie przy dostêpie
+- rêczne skanowanie
+- obs³ugê kwarantanny
+- ¶ci±ganie uaktualnieñ
+- skanowanie poczty (KMail/Evolution).
 
 %prep
 %setup -q
@@ -56,7 +62,6 @@ cd src/klammail-%{_klammail_ver}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_bindir},%{_desktopdir}}
 
 install src/*.desktop	       $RPM_BUILD_ROOT%{_desktopdir}
@@ -86,5 +91,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog INSTALL NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
-%attr(644,root,root) %{_desktopdir}/*
+%{_desktopdir}/*
 %{_iconsdir}/*/*/*/*.png
