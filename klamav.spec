@@ -1,5 +1,5 @@
 # TODO
-#  - This package contails also unpackaged dazuko-2.0.4 (should be separate kernel-* package?)
+#  - This package contails also unpackaged dazuko-2.0.5 (should be separate kernel-* package?)
 #  - kde html docs are empty
 #
 
@@ -9,12 +9,12 @@ Summary:	ClamAV Anti-Virus protection for the KDE desktop
 Summary(ru_RU.KOI8-R): KDE-оболочка для антивирусного сканера Clam AntiVirus
 Summary(pl):	Antywirus ClamAV dla ╤rodowiska KDE
 Name:		klamav
-Version:	0.09.1
-Release:	1
+Version:	0.12
+Release:	0.1
 License:	GPL
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/klamav/%{name}-%{version}.tar.bz2
-# Source0-md5:	6fa793bcf5cd2ba907a1af7bf57f42cb
+# Source0-md5:	29053a6bd52031182e105198091e14e2
 Patch0:		%{name}-paths.patch
 URL:		http://klamav.sourceforge.net/
 BuildRequires:	automake
@@ -43,7 +43,7 @@ Antywirus ClamAV dla ╤rodowiska KDE. Zawiera:
 
 %prep
 %setup -q
-%patch0 -p1
+#%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
