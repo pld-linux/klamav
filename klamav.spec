@@ -47,6 +47,7 @@ Antywirus ClamAV dla ¶rodowiska KDE. Zawiera:
 
 %build
 cp -f /usr/share/automake/config.sub admin
+cp -f /usr/share/automake/config.sub src/klammail-0.06
 %configure \
 %if "%{_lib}" == "lib64"
 	--enable-libsuffix=64 \
