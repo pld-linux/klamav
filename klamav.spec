@@ -16,6 +16,7 @@ Source0:	http://dl.sourceforge.net/klamav/%{name}-%{version}.tar.bz2
 # Source0-md5:	cef953c99117da0986c28554c3043dd9
 Patch0:		%{name}-paths.patch
 URL:		http://klamav.sourceforge.net/
+BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	clamav-devel
@@ -39,6 +40,7 @@ ClamAV Anti-Virus protection for the KDE desktop. Includes:
 %patch0 -p1
 
 %build
+cp -f /usr/share/automake/config.sub admin
 %configure \
 %if "%{_lib}" == "lib64"
 	--enable-libsuffix=64 \
