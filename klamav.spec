@@ -46,7 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog INSTALL NEWS README TODO
+%doc AUTHORS ChangeLog INSTALL NEWS README TODO doc/en/index*
 %attr(755,root,root) %{_bindir}/*
 %attr(644,root,root) %{_desktopdir}/*
 %attr(644,root,root) %{_pixmapsdir}/*
