@@ -58,9 +58,9 @@ cp -f /usr/share/automake/config.sub src/klammail
 
 %{__make}
 
-cd src/klammail
-%configure
-%{__make}
+#cd src/klammail
+#%configure
+#%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -82,9 +82,9 @@ Categories=Qt;KDE;Utility;
 	kde_htmldir=%{_kdedocdir} \
 	kde_libs_htmldir=%{_kdedocdir}
 
-cd src/klammail
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+#cd src/klammail
+#%{__make} install \
+#	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
