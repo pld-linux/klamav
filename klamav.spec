@@ -1,6 +1,7 @@
 # TODO
 #  - This package contails also unpackaged dazuko-2.0.5 (should be separate kernel-* package?)
 #  - kde html docs are empty
+#  - build on amd64 fails
 #
 
 %define	_klammail_ver 0.06
