@@ -58,10 +58,6 @@ cp -f /usr/share/automake/config.sub src/klammail
 
 %{__make}
 
-#cd src/klammail
-#%configure
-#%{__make}
-
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_bindir},%{_desktopdir}}
