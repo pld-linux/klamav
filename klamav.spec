@@ -1,5 +1,5 @@
 # TODO
-#  - This package contails also unpackaged dazuko-2.0.5 (should be separate kernel-* package?)
+#  - This package contains also unpackaged dazuko-2.0.5 (should be separate kernel-* package?)
 #  - kde html docs are empty
 #  - build on amd64 fails
 #
@@ -11,12 +11,13 @@ Summary(ru_RU.KOI8-R):KDE-оболочка для антивирусного сканера Clam AntiVirus
 Summary(pl):	Antywirus ClamAV dla ╤rodowiska KDE
 Name:		klamav
 Version:	0.17
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/klamav/%{name}-%{version}.tar.bz2
 # Source0-md5:	1d2e576e64f3cc8a9cb5b36e41001d38
 Patch0:		%{name}-paths.patch
+Patch1:		%{name}-desktop.patch
 URL:		http://klamav.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	clamav-devel
@@ -63,15 +64,6 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_bindir},%{_desktopdir}}
 
 install src/*.desktop	       $RPM_BUILD_ROOT%{_desktopdir}
-
-sed -i -e '
-/Terminal=0/{
-s/.*/Terminal=false/
-a\
-Categories=Qt;KDE;Utility;
-}
-
-' $RPM_BUILD_ROOT%{_desktopdir}/klamav.desktop
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
