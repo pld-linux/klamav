@@ -1,15 +1,16 @@
 --- klamav-0.17/src/klamav.desktop~	2005-05-17 08:45:13.000000000 +0200
 +++ klamav-0.17/src/klamav.desktop	2005-05-17 08:45:13.000000000 +0200
-@@ -23,7 +23,7 @@
+@@ -23,7 +23,8 @@
  Comment[ko]=KDE용 KPart 응용 프로그램
  Comment[lv]=KDE KPart Aplikācija
  Comment[nl]=een KDE KPart-applicatie
 -Comment[no_NY]=Eit KDE KPart-program
 +Comment[nn]=Eit KDE KPart-program
++Comment[pl]=Program antywirusowy dla KDE
  Comment[pt]=Uma aplicação KPart
  Comment[pt_BR]=Uma aplicação KPart do KDE
  Comment[ro]=O aplicaţie KPart pentru KDE
-@@ -34,5 +34,5 @@
+@@ -34,5 +35,5 @@
  Comment[sv]=Ett KDE KPart-program
  Comment[tr]=KDE Kpart Uygulaması
  Comment[uk]=Програма KPart для KDE
