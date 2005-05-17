@@ -10,7 +10,7 @@
  Comment[pt]=Uma aplicação KPart
  Comment[pt_BR]=Uma aplicação KPart do KDE
  Comment[ro]=O aplicaţie KPart pentru KDE
-@@ -34,5 +35,5 @@
+@@ -34,5 +35,6 @@
  Comment[sv]=Ett KDE KPart-program
  Comment[tr]=KDE Kpart Uygulaması
  Comment[uk]=Програма KPart для KDE
@@ -18,3 +18,4 @@
 -Terminal=0
 +Comment[zh_CN]=KDE KPart程序
 +Terminal=false
++Categories=Qt;KDE;Utility;
