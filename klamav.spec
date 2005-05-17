@@ -1,5 +1,4 @@
 # TODO
-#  - This package contains also unpackaged dazuko-2.0.5 (should be separate kernel-* package?)
 #  - kde html docs are empty
 #  - build on amd64 fails
 #
