@@ -81,4 +81,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog INSTALL NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/*
-%{_iconsdir}/*/*/*/*.png
+%{_iconsdir}/hicolor/*/*/*.png
