@@ -1,16 +1,12 @@
 # TODO
 #  - kde html docs are empty
-#  - build on amd64 fails
 #
-
-%define	_klammail_ver 0.06
-
 Summary:	ClamAV Anti-Virus protection for the KDE desktop
 Summary(ru_RU.KOI8-R):KDE-оболочка для антивирусного сканера Clam AntiVirus
 Summary(pl):	Antywirus ClamAV dla ╤rodowiska KDE
 Name:		klamav
 Version:	0.26
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/klamav/%{name}-%{version}.tar.bz2
@@ -70,10 +66,6 @@ install src/*.desktop	       $RPM_BUILD_ROOT%{_desktopdir}
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir} \
 	kde_libs_htmldir=%{_kdedocdir}
-
-#cd src/klammail
-#%{__make} install \
-#	DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{name}
 
