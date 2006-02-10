@@ -5,12 +5,12 @@ Summary:	ClamAV Anti-Virus protection for the KDE desktop
 Summary(ru_RU.KOI8-R):KDE-œ¬œÃœﬁÀ¡ ƒÃ— ¡Œ‘…◊…“’”Œœ«œ ”À¡Œ≈“¡ Clam AntiVirus
 Summary(pl):	Antywirus ClamAV dla ∂rodowiska KDE
 Name:		klamav
-Version:	0.32
-Release:	1
+Version:	0.35.1
+Release:	0.1
 License:	GPL
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/klamav/%{name}-%{version}.tar.bz2
-# Source0-md5:	f0226c6b2f64f2e9d2c4099b1812fdb6
+# Source0-md5:	acbd1f0367a43bb0440c50a6caeb3a34
 Patch0:		%{name}-desktop.patch
 URL:		http://klamav.sourceforge.net/
 BuildRequires:	automake
@@ -39,11 +39,9 @@ Antywirus ClamAV dla ∂rodowiska KDE. Zawiera:
 
 %prep
 %setup -q
-cd %{name}-%{version}
 %patch0 -p1
 
 %build
-cd %{name}-%{version}
 cp -f /usr/share/automake/config.sub admin
 %configure \
 %if "%{_lib}" == "lib64"
@@ -57,9 +55,6 @@ cp -f /usr/share/automake/config.sub admin
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_bindir},%{_desktopdir}}
-
-cd %{name}-%{version}
-
 install src/*.desktop	       $RPM_BUILD_ROOT%{_desktopdir}
 
 %{__make} install \
@@ -72,9 +67,9 @@ install src/*.desktop	       $RPM_BUILD_ROOT%{_desktopdir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}-%{version}/%{name}.lang
+%files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc %{name}-%{version}/{AUTHORS,ChangeLog,INSTALL,NEWS,README,TODO}
+%doc AUTHORS ChangeLog INSTALL NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/*
 %{_iconsdir}/hicolor/*/*/*.png
