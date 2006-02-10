@@ -1,21 +1,42 @@
---- klamav-0.17/src/klamav.desktop~	2005-05-17 08:45:13.000000000 +0200
-+++ klamav-0.17/src/klamav.desktop	2005-05-17 08:45:13.000000000 +0200
-@@ -23,7 +23,8 @@
- Comment[ko]=KDE용 KPart 응용 프로그램
- Comment[lv]=KDE KPart Aplikācija
- Comment[nl]=een KDE KPart-applicatie
--Comment[no_NY]=Eit KDE KPart-program
-+Comment[nn]=Eit KDE KPart-program
-+Comment[pl]=Program antywirusowy dla KDE
- Comment[pt]=Uma aplicação KPart
- Comment[pt_BR]=Uma aplicação KPart do KDE
- Comment[ro]=O aplicaţie KPart pentru KDE
-@@ -34,5 +35,6 @@
- Comment[sv]=Ett KDE KPart-program
- Comment[tr]=KDE Kpart Uygulaması
- Comment[uk]=Програма KPart для KDE
--Comment[zh_CN.GB2312]=KDE KPart程序
+--- klamav-0.35.1/src/klamav.desktop~	2006-02-10 18:26:17.000000000 +0000
++++ klamav-0.35.1/src/klamav.desktop	2006-02-10 18:28:35.000000000 +0000
+@@ -6,36 +6,7 @@
+ Type=Application
+ DocPath=klamav/klamav.html
+ Comment=An Anti-Virus Manager
+-Comment[cs]=An Anti-Virus Manager
+-Comment[da]=An Anti-Virus Manager
+-Comment[de]=An Anti-Virus Manager
+-Comment[el]=An Anti-Virus Manager
+-Comment[eo]=An Anti-Virus Manager
+-Comment[es]=An Anti-Virus Manager
+-Comment[et]=An Anti-Virus Manager
+-Comment[fi]=An Anti-Virus Manager
+-Comment[fr]=An Anti-Virus Manager
+-Comment[he]=An Anti-Virus Manager
+-Comment[hu]=An Anti-Virus Manager
+-Comment[is]=An Anti-Virus Manager
+-Comment[it]=An Anti-Virus Manager
+-Comment[ja]=An Anti-Virus Manager
+-Comment[ko]=An Anti-Virus Manager
+-Comment[lv]=An Anti-Virus Manager
+-Comment[nl]=An Anti-Virus Manager
+-Comment[no_NY]=An Anti-Virus Manager
+-Comment[pt]=An Anti-Virus Manager
+-Comment[pt_BR]=An Anti-Virus Manager
+-Comment[ro]=An Anti-Virus Manager
+-Comment[ru]=An Anti-Virus Manager
+-Comment[sk]=An Anti-Virus Manager
+-Comment[sl]=An Anti-Virus Manager
+-Comment[sr]=An Anti-Virus Manager
+-Comment[sv]=An Anti-Virus Manager
+-Comment[tr]=An Anti-Virus Manager
+-Comment[uk]=An Anti-Virus Manager
+-Comment[zh_CN.GB2312]=An Anti-Virus Manager
 -Terminal=0
-+Comment[zh_CN]=KDE KPart程序
++Comment[pl]=Program antywirusowy dla KDE
 +Terminal=false
+ GenericName=Anti-Virus Manager
+-GenericName[fr]=Anti-Virus Manager
+-Categories=Qt;KDE;Application;System;
 +Categories=Qt;KDE;Utility;
