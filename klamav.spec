@@ -3,7 +3,7 @@
 #
 Summary:	ClamAV Anti-Virus protection for the KDE desktop
 Summary(pl):	Antywirus ClamAV dla ╤rodowiska KDE
-Summary(ru_RU.KOI8-R):KDE-оболочка для антивирусного сканера Clam AntiVirus
+Summary(ru):	KDE-оболочка для антивирусного сканера Clam AntiVirus
 Name:		klamav
 Version:	0.37
 Release:	1
@@ -22,7 +22,7 @@ Requires:	clamav
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-ClamAV Anti-Virus protection for the KDE desktop. Includes:
+ClamAV Anti-Virus protection for the KDE desktop. It includes:
 - 'On Access' Scanning
 - Manual Scanning
 - Quarantine Management
