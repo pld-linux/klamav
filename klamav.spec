@@ -73,3 +73,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/*
 %{_iconsdir}/hicolor/*/*/*.png
+%{_datadir}/apps/%{name}
+%{_datadir}/apps/konqueror/servicemenus/klamav-dropdown.desktop
+%{_datadir}/config.kcfg/*
