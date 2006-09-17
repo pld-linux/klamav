@@ -5,12 +5,12 @@ Summary:	ClamAV Anti-Virus protection for the KDE desktop
 Summary(pl):	Antywirus ClamAV dla ╤rodowiska KDE
 Summary(ru):	KDE-оболочка для антивирусного сканера Clam AntiVirus
 Name:		klamav
-Version:	0.37
+Version:	0.38
 Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/klamav/%{name}-%{version}.tar.bz2
-# Source0-md5:	555a06b78d98a1950ca8c660fd7990a3
+# Source0-md5:	396af3834145e4413a4d207857d86f47
 Patch0:		%{name}-desktop.patch
 URL:		http://klamav.sourceforge.net/
 BuildRequires:	automake
@@ -55,12 +55,13 @@ cp -f /usr/share/automake/config.sub admin
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_bindir},%{_desktopdir}}
-install src/*.desktop	       $RPM_BUILD_ROOT%{_desktopdir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir} \
 	kde_libs_htmldir=%{_kdedocdir}
+mv $RPM_BUILD_ROOT%{_datadir}/applnk/Utilities/klamav.desktop $RPM_BUILD_ROOT%{_desktopdir}
+rm -rf $RPM_BUILD_ROOT%{_iconsdir}/locolor
 
 %find_lang %{name}
 
