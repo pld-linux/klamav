@@ -5,16 +5,16 @@ Summary:	ClamAV Anti-Virus protection for the KDE desktop
 Summary(pl):	Antywirus ClamAV dla ¶rodowiska KDE
 Summary(ru):	KDE-ÏÂÏÌÏÞËÁ ÄÌÑ ÁÎÔÉ×ÉÒÕÓÎÏÇÏ ÓËÁÎÅÒÁ Clam AntiVirus
 Name:		klamav
-Version:	0.38
-Release:	1
+Version:	0.40
+Release:	0.1
 License:	GPL
 Group:		Applications/System
-Source0:	http://dl.sourceforge.net/klamav/%{name}-%{version}.tar.bz2
-# Source0-md5:	396af3834145e4413a4d207857d86f47
+Source0:	http://dl.sourceforge.net/klamav/%{name}-%{version}-source.tar.gz
+# Source0-md5:	65818ece1115848602c87ab878784fea
 Patch0:		%{name}-desktop.patch
 URL:		http://klamav.sourceforge.net/
 BuildRequires:	automake
-BuildRequires:	clamav-devel
+BuildRequires:	clamav-devel >= 0.90
 BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	sed >= 4.0
@@ -37,10 +37,11 @@ Antywirus ClamAV dla ¶rodowiska KDE. Zawiera:
 - skanowanie poczty (KMail/Evolution).
 
 %prep
-%setup -q
-%patch0 -p1
+%setup -q -n %{name}-%{version}-source
+#%patch0 -p1
 
 %build
+cd %{name}-%{version}
 cp -f /usr/share/automake/config.sub admin
 %configure \
 %if "%{_lib}" == "lib64"
