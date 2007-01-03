@@ -14,7 +14,7 @@ Source0:	http://dl.sourceforge.net/klamav/%{name}-%{version}-source.tar.gz
 Patch0:		%{name}-desktop.patch
 URL:		http://klamav.sourceforge.net/
 BuildRequires:	automake
-BuildRequires:	clamav-devel >= 0.90
+BuildRequires:	clamav-devel >= 0.90-0.rc2.1
 BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	sed >= 4.0
