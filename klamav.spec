@@ -69,9 +69,9 @@ rm -rf $RPM_BUILD_ROOT%{_iconsdir}/locolor
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}.lang
+%files -f %{name}-%{version}/%{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog INSTALL NEWS README TODO
+%doc %{name}-%{version}/AUTHORS %{name}-%{version}/ChangeLog %{name}-%{version}/INSTALL %{name}-%{version}/NEWS %{name}-%{version}/README %{name}-%{version}/TODO
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/*.desktop
 %{_iconsdir}/hicolor/*/*/*.png
