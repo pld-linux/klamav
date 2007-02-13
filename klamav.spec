@@ -2,8 +2,8 @@
 #  - kde html docs are empty
 #
 Summary:	ClamAV Anti-Virus protection for the KDE desktop
-Summary(pl.UTF-8):   Antywirus ClamAV dla środowiska KDE
-Summary(ru.UTF-8):   KDE-оболочка для антивирусного сканера Clam AntiVirus
+Summary(pl.UTF-8):	Antywirus ClamAV dla środowiska KDE
+Summary(ru.UTF-8):	KDE-оболочка для антивирусного сканера Clam AntiVirus
 Name:		klamav
 Version:	0.40
 Release:	0.1
