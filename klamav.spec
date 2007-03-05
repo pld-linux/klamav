@@ -2,27 +2,26 @@
 #  - kde html docs are empty
 #
 Summary:	ClamAV Anti-Virus protection for the KDE desktop
-Summary(ru_RU.KOI8-R):KDE-оболочка для антивирусного сканера Clam AntiVirus
 Summary(pl):	Antywirus ClamAV dla ╤rodowiska KDE
+Summary(ru):	KDE-оболочка для антивирусного сканера Clam AntiVirus
 Name:		klamav
-Version:	0.35.1
-Release:	0.1
+Version:	0.41
+Release:	1
 License:	GPL
 Group:		Applications/System
-Source0:	http://dl.sourceforge.net/klamav/%{name}-%{version}.tar.bz2
-# Source0-md5:	acbd1f0367a43bb0440c50a6caeb3a34
+Source0:	http://dl.sourceforge.net/klamav/%{name}-%{version}-source.tar.gz
+# Source0-md5:	4878b88f6b069dcef0f5825f9bca624a
 Patch0:		%{name}-desktop.patch
 URL:		http://klamav.sourceforge.net/
 BuildRequires:	automake
-BuildRequires:	clamav-devel
+BuildRequires:	clamav-devel >= 0.90
 BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	sed >= 4.0
-Requires:	clamav
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-ClamAV Anti-Virus protection for the KDE desktop. Includes:
+ClamAV Anti-Virus protection for the KDE desktop. It includes:
 - 'On Access' Scanning
 - Manual Scanning
 - Quarantine Management
@@ -38,10 +37,11 @@ Antywirus ClamAV dla ╤rodowiska KDE. Zawiera:
 - skanowanie poczty (KMail/Evolution).
 
 %prep
-%setup -q
-%patch0 -p1
+%setup -q -n %{name}-%{version}-source
+#%patch0 -p1
 
 %build
+cd %{name}-%{version}
 cp -f /usr/share/automake/config.sub admin
 %configure \
 %if "%{_lib}" == "lib64"
@@ -53,23 +53,28 @@ cp -f /usr/share/automake/config.sub admin
 %{__make}
 
 %install
+cd %{name}-%{version}
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_bindir},%{_desktopdir}}
-install src/*.desktop	       $RPM_BUILD_ROOT%{_desktopdir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir} \
 	kde_libs_htmldir=%{_kdedocdir}
+mv $RPM_BUILD_ROOT%{_datadir}/applnk/Utilities/klamav.desktop $RPM_BUILD_ROOT%{_desktopdir}
+rm -rf $RPM_BUILD_ROOT%{_iconsdir}/locolor
 
 %find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}.lang
+%files -f %{name}-%{version}/%{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog INSTALL NEWS README TODO
+%doc %{name}-%{version}/AUTHORS %{name}-%{version}/ChangeLog %{name}-%{version}/INSTALL %{name}-%{version}/NEWS %{name}-%{version}/README %{name}-%{version}/TODO
 %attr(755,root,root) %{_bindir}/*
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_iconsdir}/hicolor/*/*/*.png
+%{_datadir}/apps/%{name}
+%{_datadir}/apps/konqueror/servicemenus/klamav-dropdown.desktop
+%{_datadir}/config.kcfg/*
