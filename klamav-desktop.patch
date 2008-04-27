@@ -1,6 +1,6 @@
---- klamav-0.35.1/src/klamav.desktop~	2006-02-10 18:26:17.000000000 +0000
-+++ klamav-0.35.1/src/klamav.desktop	2006-02-10 18:28:35.000000000 +0000
-@@ -6,36 +6,7 @@
+--- klamav-0.42-source/klamav/src/klamav.desktop~	2008-01-06 18:00:31.000000000 +0200
++++ klamav-0.42-source/klamav/src/klamav.desktop	2008-04-27 12:25:00.934344685 +0300
+@@ -6,36 +6,6 @@
  Type=Application
  DocPath=klamav/klamav.html
  Comment=An Anti-Virus Manager
@@ -35,7 +35,6 @@
 -Comment[zh_CN.GB2312]=An Anti-Virus Manager
 -Terminal=0
 +Comment[pl]=Program antywirusowy dla KDE
-+Terminal=false
  GenericName=Anti-Virus Manager
 -GenericName[fr]=Anti-Virus Manager
 -Categories=Qt;KDE;Application;System;
