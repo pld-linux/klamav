@@ -1,21 +1,18 @@
-# TODO
-#  - kde html docs are empty
-#
 Summary:	ClamAV Anti-Virus protection for the KDE desktop
 Summary(pl.UTF-8):	Antywirus ClamAV dla środowiska KDE
 Summary(ru.UTF-8):	KDE-оболочка для антивирусного сканера Clam AntiVirus
 Name:		klamav
-Version:	0.41.1
+Version:	0.42
 Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/klamav/%{name}-%{version}-source.tar.gz
-# Source0-md5:	073c3f223d89016c14bab957230ac3b7
+# Source0-md5:	4cf95f5e9d8a215f2cd2c312612811f6
 Patch0:		%{name}-desktop.patch
-Patch1:		%{name}-clamav_092.patch
+Patch1:		%{name}-clamav_093.patch
 URL:		http://klamav.sourceforge.net/
 BuildRequires:	automake
-BuildRequires:	clamav-devel >= 0.90
+BuildRequires:	clamav-devel >= 0.93
 BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	sed >= 4.0
@@ -39,11 +36,14 @@ Antywirus ClamAV dla środowiska KDE. Zawiera:
 
 %prep
 %setup -q -n %{name}-%{version}-source
-#%patch0 -p1
+mv klamav-%{version} klamav
+%patch0 -p1
+cd klamav
 %patch1 -p1
+cd -
 
 %build
-cd %{name}-%{version}
+cd %{name}
 cp -f /usr/share/automake/config.sub admin
 %configure \
 %if "%{_lib}" == "lib64"
@@ -55,28 +55,31 @@ cp -f /usr/share/automake/config.sub admin
 %{__make}
 
 %install
-cd %{name}-%{version}
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_bindir},%{_desktopdir}}
 
-%{__make} install \
+%{__make} -C %{name} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir} \
 	kde_libs_htmldir=%{_kdedocdir}
+
 mv $RPM_BUILD_ROOT%{_datadir}/applnk/Utilities/klamav.desktop $RPM_BUILD_ROOT%{_desktopdir}
 rm -rf $RPM_BUILD_ROOT%{_iconsdir}/locolor
 
-%find_lang %{name}
+%find_lang %{name} --with-kde --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}-%{version}/%{name}.lang
+%files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc %{name}-%{version}/AUTHORS %{name}-%{version}/ChangeLog %{name}-%{version}/INSTALL %{name}-%{version}/NEWS %{name}-%{version}/README %{name}-%{version}/TODO
-%attr(755,root,root) %{_bindir}/*
+%doc %{name}/{AUTHORS,ChangeLog,INSTALL,NEWS,README,TODO}
+%attr(755,root,root) %{_bindir}/ScanWithKlamAV
+%attr(755,root,root) %{_bindir}/klamarkollon
+%attr(755,root,root) %{_bindir}/klamav
+%attr(755,root,root) %{_bindir}/klammail
 %{_desktopdir}/*.desktop
 %{_iconsdir}/hicolor/*/*/*.png
 %{_datadir}/apps/%{name}
-%{_datadir}/apps/konqueror/servicemenus/klamav-dropdown.desktop
+%{_datadir}/apps/konqueror/servicemenus/*.desktop
 %{_datadir}/config.kcfg/*
