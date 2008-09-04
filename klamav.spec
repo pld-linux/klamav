@@ -2,14 +2,14 @@ Summary:	ClamAV Anti-Virus protection for the KDE desktop
 Summary(pl.UTF-8):	Antywirus ClamAV dla środowiska KDE
 Summary(ru.UTF-8):	KDE-оболочка для антивирусного сканера Clam AntiVirus
 Name:		klamav
-Version:	0.42
+Version:	0.44
 Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/klamav/%{name}-%{version}-source.tar.gz
-# Source0-md5:	4cf95f5e9d8a215f2cd2c312612811f6
+# Source0-md5:	1e5caa994677b8e82819d6340abde97f
 Patch0:		%{name}-desktop.patch
-Patch1:		%{name}-clamav_093.patch
+Patch1:		%{name}-clamav-0.94.patch
 URL:		http://klamav.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	clamav-devel >= 0.93
@@ -39,7 +39,7 @@ Antywirus ClamAV dla środowiska KDE. Zawiera:
 mv klamav-%{version} klamav
 %patch0 -p1
 cd klamav
-%patch1 -p1
+%patch1 -p0
 cd -
 
 %build

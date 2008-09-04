@@ -1,0 +1,15 @@
+--- src/klammail/clamdmail.c	2008-07-06 14:05:42.000000000 +0200
++++ src/klammail/clamdmail.c.oden	2008-09-04 15:18:52.000000000 +0200
+@@ -157,12 +157,6 @@
+                         }
+                 }
+ 
+-                if(fsync(fd) == -1) {
+-//                         cli_dbgmsg("fsync() failed for descriptor %d\n", fd);
+-                        close(fd);
+-                        return CL_EFSYNC;
+-                }
+-
+                 close(fd);
+ 
+                 if((fd = open(tmpnm, O_RDONLY)) == -1) {
