@@ -37,9 +37,9 @@ Antywirus ClamAV dla środowiska KDE. Zawiera:
 %prep
 %setup -q -n %{name}-%{version}-source
 mv klamav-%{version} klamav
-%patch0 -p1
+%patch -P0 -p1
 cd klamav
-%patch1 -p0
+%patch -P1 -p0
 cd -
 
 %build
